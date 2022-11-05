@@ -90,7 +90,7 @@ export default function CardPub({ foto, setOpen, open }) {
           <Typography className="font-semibold" paragraph>Detalhes:</Typography>
           <Typography paragraph>
             Heat 1/2 cup of the broth in a pot until simmering, add saffron and set
-            aside for 10 minutes.
+            aside for 10.
           </Typography>
           <Typography>
             Set aside off of the heat to let rest for 10 minutes, and then serve.
