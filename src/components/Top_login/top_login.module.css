@@ -1,0 +1,15 @@
+.TopLogin {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    align-items: center;
+    padding-left: 10px;
+    font-size: larger;
+    height: 50px;
+    font-family: 'Aref Ruqaa Ink', serif;
+    font-weight: bold;
+    background-color: #2b4f71;
+    color: white;
+    z-index: 5;
+}
