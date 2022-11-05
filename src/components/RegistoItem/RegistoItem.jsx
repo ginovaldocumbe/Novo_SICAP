@@ -59,10 +59,12 @@ export default function RegistoItem() {
           </Tabs>
         </Box>
         <TabPanel className='bg-reg-500' value={value} index={0}>
-          <FormRegisto />
+          <FormRegisto 
+          estado='Perdido'/>
         </TabPanel>
         <TabPanel value={value} index={1}>
-          <FormRegisto />
+          <FormRegisto 
+          estado='Achado'/>
         </TabPanel>
       </Box>
     </div>

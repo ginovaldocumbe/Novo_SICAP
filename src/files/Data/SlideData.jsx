@@ -1,7 +1,7 @@
 import { RiHome2Line } from "react-icons/ri";
 import { AiOutlineUser } from "react-icons/ai";
-import { BsPeople, BsCalendar, BsBook, BsBookmarks } from "react-icons/bs";
-import { FiBook } from "react-icons/fi";
+import {  BsSearch,BsFiles,BsCloudUpload } from "react-icons/bs";
+
 
 export const SlideData = [
 
@@ -13,22 +13,22 @@ export const SlideData = [
     {
         path: "/perfil",
         nome: "Perfil",
-        icone: <BsCalendar />,
+        icone: <AiOutlineUser />,
     },
     {
         path: "/registar",
         nome: "Publicar",
-        icone: <BsPeople />,
+        icone: <BsCloudUpload />,
     },
     {
         path: "/todas_publicacoes",
         nome: "Procurar",
-        icone: <AiOutlineUser />,
+        icone: <BsSearch/>,
     },
     {
         path: "/minhas_publicacoes",
-        nome: "Minhas Publicacoes",
-        icone: <FiBook />,
+        nome: "Minhas Publicações",
+        icone: <BsFiles />,
     },
 
 ]
