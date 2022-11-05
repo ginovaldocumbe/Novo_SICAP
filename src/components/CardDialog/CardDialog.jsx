@@ -36,7 +36,7 @@ export default function CardDialog({ open, setOpen }) {
           />
         </DialogContent>
         <DialogActions>
-          <button onClick={handleClose} className="p-2 text-sky-800 border border-sky-800 text-white rounded-lg w-28">Cancelar</button>
+          <button onClick={handleClose} className="p-2 text-sky-800 border border-sky-800 text-sky-800 rounded-lg w-28">Cancelar</button>
           <button onClick={handleClose} className="p-2 bg-sky-800 text-white rounded-lg w-28">Enviar</button>
         </DialogActions>
       </Dialog>

@@ -13,9 +13,8 @@ import { red } from '@mui/material/colors';
 import { MdExpandMore } from "react-icons/md";
 import { FiMoreVertical } from "react-icons/fi";
 import CardDialog from "../CardDialog/CardDialog";
-import { BsFillHeartFill } from "react-icons/bs";
+import { BsHeart, BsShare } from "react-icons/bs";
 import { TextField } from "@mui/material";
-import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
@@ -45,7 +44,7 @@ export default function CardPub({ foto, setOpen, open }) {
     setOpen(true);
   };
 
-  
+
 
   const handleChange = (event) => {
     setAge(event.target.value);
@@ -84,7 +83,8 @@ export default function CardPub({ foto, setOpen, open }) {
         <Typography className="" paragraph>NoteBook</Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <BsFillHeartFill className="text-red-600 mr-3" />
+        <BsHeart className="text-slate-600 mr-3" />
+        <BsShare className="text-slate-600 mr-3" />
         <button onClick={handleClickOpen} className="p-1 bg-sky-500 rounded-full text-white mr-3 text-xs">Devolução</button>
 
         <ExpandMore
@@ -147,7 +147,7 @@ export default function CardPub({ foto, setOpen, open }) {
               InputLabelProps={{
                 shrink: true,
               }}
-              defaultValue='0'
+              defaultValue='500'
               className="w-full"
               size="small"
               id="outlined-required"
@@ -160,7 +160,7 @@ export default function CardPub({ foto, setOpen, open }) {
               className="w-full"
               id="outlined-multiline-static"
               multiline
-              rows={6}
+              rows={8}
               defaultValue='Lorem ipsum dolor sit amet consectetur adipisicing elit. 
               Recusandae rerum iure aperiam, dolore facere, reiciendis et similique neque quod 
               ullam nemo officiis ut suscipit harum deleniti. Natus architecto est esse'

@@ -13,7 +13,10 @@ import { red } from '@mui/material/colors';
 import { MdExpandMore } from "react-icons/md";
 import { FiMoreVertical } from "react-icons/fi";
 import CardDialog from "../CardDialog/CardDialog";
-import { BsFillHeartFill } from "react-icons/bs";
+import { BsHeart, BsShare } from "react-icons/bs";
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import Button from '@mui/material/Button';
 
 
 const ExpandMore = styled((props) => {
@@ -28,6 +31,18 @@ const ExpandMore = styled((props) => {
 }));
 
 export default function CardPub({ foto, setOpen, open }) {
+
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const abrir = Boolean(anchorEl);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -65,10 +80,27 @@ export default function CardPub({ foto, setOpen, open }) {
       />
       <CardContent>
         <Typography className="!font-semibold">Tipo de item:</Typography>
-        <Typography className="" paragraph>Bilhete de identidade (BI)</Typography>
+        <Typography className="" paragraph>Bilhete de identidade (BI) </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <BsFillHeartFill className="text-red-600 mr-3" />
+        <BsHeart className="text-slate-600 mr-3" />
+        <BsShare aria-controls={open ? 'basic-menu' : undefined}
+          aria-haspopup="true"
+          aria-expanded={open ? 'true' : undefined}
+          onClick={handleClick} className="text-slate-600 mr-3" />
+        <Menu
+          id="basic-menu"
+          anchorEl={anchorEl}
+          open={abrir}
+          onClose={handleClose}
+          MenuListProps={{
+            'aria-labelledby': 'basic-button',
+          }}
+        >
+          <MenuItem onClick={handleClose}>Facebook</MenuItem>
+          <MenuItem onClick={handleClose}>Email</MenuItem>
+          {/* <MenuItem onClick={handleClose}>Amigo</MenuItem> */}
+        </Menu>
         <button onClick={handleClickOpen} className="p-1 bg-sky-500 rounded-full text-white mr-3 text-xs">Devolução</button>
 
         <ExpandMore
@@ -98,9 +130,9 @@ export default function CardPub({ foto, setOpen, open }) {
           </Typography>
           <Typography paragraph>
             <Typography className=" " >Outros detalhes:</Typography>
-            <Typography className=" ">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Recusandae rerum iure aperiam, dolore facere, reiciendis et similique neque quod 
-            ullam nemo officiis ut suscipit harum deleniti. Natus architecto est esse.</Typography>
+            <Typography className=" ">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Recusandae rerum iure aperiam, dolore facere, reiciendis et similique neque quod
+              ullam nemo officiis ut suscipit harum deleniti. Natus architecto est esse.</Typography>
           </Typography>
         </CardContent>
       </Collapse>

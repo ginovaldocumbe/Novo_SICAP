@@ -12,7 +12,8 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import MenuComp from './../Menu/Menu'
-
+import { IoIosNotificationsOutline } from "react-icons/io";
+import { Badge } from "@mui/material";
 
 
 
@@ -111,11 +112,14 @@ function NavBar() {
             </Box>
 
             <Box sx={{ flexGrow: 0 }}>
-              <Tooltip title="Open settings">
-
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-
-              </Tooltip>
+              <div className="flex items-center justify-center gap-3">
+                <Badge badgeContent={4} color="error">
+                  <IoIosNotificationsOutline className="text-xl" />
+                </Badge>
+                <Avatar
+                  sx={{ width: 30, height: 30 }}
+                  alt="Wellington" src="/static/images/avatar/2.jpg" />
+              </div>
               <Menu
                 sx={{ mt: '45px' }}
                 id="menu-appbar"
