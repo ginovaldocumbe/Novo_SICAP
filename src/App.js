@@ -8,13 +8,15 @@ import Minhas_publicacoes from './pages/Minhas_publicacoes/Minhas_publicacoes';
 import Perfil from './pages/Perfil/Perfil';
 import Chat from './pages/Chat/Chat';
 import Mensagem from './pages/Mensagem/Mensagem';
+import Inicial from './pages/Inicial/Inicial';
 
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Login />} />
+        <Route path='/' element={<Inicial />} />
+        <Route path='/login' element={<Login />} />
         <Route path='/registo' element={<Registo />} />
         <Route path='/todas_publicacoes' element={<TodasPub />} />
         <Route path='/registar' element={<RegistarItem />} />

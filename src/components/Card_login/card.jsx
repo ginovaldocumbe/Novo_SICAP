@@ -19,7 +19,7 @@ const Card = () => (
         </div>
         <a className={styles.esqueci}>Esqueceu a senha?</a> <br />
         <div className='flex flex-col items-center justify-center mt-5 gap-5 md:flex-row'>
-          <Link to='/todas_publicacoes'> <button className='p-2 bg-sky-800 text-white rounded-lg w-60 md:w-36'>Entrar</button></Link>
+          <Link to='/inicio'> <button className='p-2 bg-sky-800 text-white rounded-lg w-60 md:w-36'>Entrar</button></Link>
           <Link to='/registo'><button className='p-2 border border-sky-800 text-sky-800 rounded-lg w-60 md:w-36'>Registo</button></Link>
           {/* <Link to='/meus_detalhes'><BtnPrimaria funcao='Entrar'></BtnPrimaria></Link>
           <Link to='/registo'><BtnSecondaria funcao='Nova Conta' /></Link> */}

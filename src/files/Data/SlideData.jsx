@@ -21,11 +21,11 @@ export const SlideData = [
         nome: "Publicar",
         icone: <BsCloudUpload />,
     },
-    {
-        path: "/todas_publicacoes",
-        nome: "Procurar",
-        icone: <BsSearch/>,
-    },
+    // {
+    //     path: "/todas_publicacoes",
+    //     nome: "Procurar",
+    //     icone: <BsSearch/>,
+    // },
     {
         path: "/mensagens",
         nome: "Mensagens",

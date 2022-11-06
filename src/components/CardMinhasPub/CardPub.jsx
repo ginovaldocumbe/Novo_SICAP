@@ -84,8 +84,8 @@ export default function CardPub({ foto, setOpen, open }) {
       </CardContent>
       <CardActions disableSpacing>
         <BsHeart className="text-slate-600 mr-3" />
-        <BsShare className="text-slate-600 mr-3" />
-        <button onClick={handleClickOpen} className="p-1 bg-sky-500 rounded-full text-white mr-3 text-xs">Devolução</button>
+        {/* <BsShare className="text-slate-600 mr-3" /> */}
+        {/* <button onClick={handleClickOpen} className="p-1 bg-sky-500 rounded-full text-white mr-3 text-xs">Devolução</button> */}
 
         <ExpandMore
           expand={expanded}
