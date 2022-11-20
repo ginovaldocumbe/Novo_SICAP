@@ -14,10 +14,11 @@ import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import MenuComp from './../Menu/Menu'
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { Badge } from "@mui/material";
+import { Link } from "react-router-dom";
 
 
 
-function NavBar() {
+function NavBar({ usuario }) {
   const [state, setState] = React.useState({ left: false, });
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
@@ -116,9 +117,11 @@ function NavBar() {
                 <Badge badgeContent={4} color="error">
                   <IoIosNotificationsOutline className="text-xl" />
                 </Badge>
-                <Avatar
-                  sx={{ width: 30, height: 30 }}
-                  alt="Wellington" src="/static/images/avatar/2.jpg" />
+                <Link to='/perfil'>
+                  <Avatar
+                    sx={{ width: 30, height: 30 }}
+                    alt={usuario} src="/static/images/avatar/2.jpg" />
+                </Link>
               </div>
               <Menu
                 sx={{ mt: '45px' }}

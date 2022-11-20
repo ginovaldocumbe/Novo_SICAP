@@ -30,7 +30,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function CardPub({ foto, setOpen, open }) {
+export default function CardPub({ titulo,descricao_curta, foto, setOpen, open }) {
 
 
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -80,7 +80,7 @@ export default function CardPub({ foto, setOpen, open }) {
       />
       <CardContent>
         <Typography className="!font-semibold">Tipo de item:</Typography>
-        <Typography className="" paragraph>Bilhete de identidade (BI) </Typography>
+        <Typography className="" paragraph>{titulo} </Typography>
       </CardContent>
       <CardActions disableSpacing>
         <BsHeart className="text-slate-600 mr-3" />
