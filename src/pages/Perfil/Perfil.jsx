@@ -1,19 +1,40 @@
 import { Checkbox, FormControlLabel, FormGroup, Switch, TextField } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
+import { useState } from "react";
 import Baixo from "../../components/Baixo/baixo";
 import NavBar from "../../components/NavBar/NavBar";
-
+import { AllGets } from './../../requests/Get/AllGets'
 
 export default function Perfil() {
   const [checked, setChecked] = React.useState(false);
+  const [nome, setNome] = useState("");
+  const [bairro, setBairro] = useState("");
+  const [telefone, setTelefone] = useState("");
+  const [email, setEmail] = useState("");
+  const [antigoPassword, setAntigoPassword] = useState("");
+  const [novoPassowrd, setNovoPassword] = useState("");
+  const [confNovoPassw, setConfNovoPassw] = useState("");
+
+  const { GetUsuario } = AllGets();
 
   function mudarCheck() {
     setChecked(!checked)
   }
 
+  useEffect(() => {
+    (async () => {
+      let response = await GetUsuario()
+      setNome(response.data.name)
+      setBairro(response.data.district)
+      setTelefone(response.data.cellphone)
+      setEmail(response.data.email)
+    })()
+  }, [])
+
   return (
     <div className="h-screen  pt-16   md:pt-0">
-      <NavBar />
+      <NavBar
+        usuario={nome} />
       <div className="flex flex-col items-center px-3 h-screen md:pt-2 md:mt-16">
         <div className="flex flex-row gap-12 items-center md:gap-3 md:w-80 md:-mb-10">
           <div className=" md:w-fit ">
@@ -43,28 +64,39 @@ export default function Perfil() {
           </div>
           <div className=" w-full md:grid md:grid-cols-2 md:w-[80%]">
             <div>
-              <div className="flex items-center justify-center px-3 w-full mb-3">
+              {/* <div className="flex items-center justify-center px-3 w-full mb-3">
                 <TextField className='w-full' id="standard-basic" type='text' label="Apelido" defaultValue='Macie' variant="standard" />
+              </div> */}
+              <div className="flex items-center justify-center px-3 w-full mb-3">
+                <TextField
+                  value={nome}
+                  className='w-full' id="standard-basic" type='text' label="Nomes" variant="standard" />
               </div>
               <div className="flex items-center justify-center px-3 w-full mb-3">
-                <TextField className='w-full' id="standard-basic" type='text' label="Nomes" defaultValue='Wellington' variant="standard" />
+                <TextField
+                  value={email}
+                  className='w-full' id="standard-basic" type='email' label="Email" variant="standard" />
               </div>
               <div className="flex items-center justify-center px-3 w-full mb-3">
-                <TextField className='w-full' id="standard-basic" type='email' label="Email" defaultValue='wen@gmail.com' variant="standard" />
-              </div>
-              <div className="flex items-center justify-center px-3 w-full mb-3">
-                <TextField className='w-full' id="standard-basic" type='number' label="Contacto" defaultValue='845029681' variant="standard" />
+                <TextField
+                  value={telefone}
+                  className='w-full' id="standard-basic" type='number' label="Contacto" defaultValue='845029681' variant="standard" />
               </div>
             </div>
             <div>
               <div className="flex items-center justify-center px-3 w-full mb-3">
-                <TextField className='w-full' id="standard-basic" type='text' label="Morada" defaultValue='Nkobe Q.19 C.460' variant="standard" />
+                <TextField
+                  value={bairro}
+                  className='w-full' id="standard-basic" type='text' label="Morada" defaultValue='Nkobe Q.19 C.460' variant="standard" />
               </div>
               <div className="flex items-center justify-center px-3 w-full mb-3">
                 <TextField className='w-full' id="standard-basic" type='password' label="Senha Antiga" variant="standard" />
               </div>
               <div className="flex items-center justify-center px-3 w-full mb-3">
                 <TextField className='w-full' id="standard-basic" type='password' label="Nova Senha" variant="standard" />
+              </div>
+              <div className="flex items-center justify-center px-3 w-full mb-3">
+                <TextField className='w-full' id="standard-basic" type='password' label="Confirmar Nova Senha" variant="standard" />
               </div>
             </div>
           </div>
